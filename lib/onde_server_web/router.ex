@@ -20,7 +20,9 @@ defmodule OndeServerWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", OndeServerWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", OndeServerWeb do
+    pipe_through :api
+    put "/bages", BageController, :update
+    get "/bages", BageController, :index
+  end
 end
