@@ -17,6 +17,7 @@ defmodule OndeServerWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/horarios", HorarioController
   end
 
   # Other scopes may use custom stacks.
@@ -24,5 +25,7 @@ defmodule OndeServerWeb.Router do
     pipe_through :api
     put "/bages", BageController, :update
     get "/bages", BageController, :index
+    resources "/horarios", Api.HorarioController
+
   end
 end
