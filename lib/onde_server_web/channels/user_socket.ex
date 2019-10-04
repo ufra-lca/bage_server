@@ -2,7 +2,7 @@ defmodule OndeServerWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", OndeServerWeb.RoomChannel
+  channel "room:*", OndeServerWeb.BageChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After

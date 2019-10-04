@@ -25,15 +25,39 @@ defmodule OndeServerWeb.BageController do
     render(conn, "show.json", bage: bage)
   end
 
+  defp bage_to_broadcast(bage) do
+    %{
+      id: bage.id,
+      latitude: bage.latitude,
+      longitude: bage.longitude,
+      zootec: bage.zootec,
+      rodando: bage.rodando,
+      sentido: bage.sentido,
+      one_signal: bage.one_signal
+    }
+  end
+
   def update(conn, %{"bage" => bage_params}) do
     case GeoLocation.get_bage_by_one_signal(bage_params["one_signal"]) do
       nil ->
         with {:ok, %Bage{} = bage_new} <- GeoLocation.create_bage(bage_params) do
+          OndeServerWeb.Endpoint.broadcast(
+            "room:lobby",
+            "bage_update",
+            bage_to_broadcast(bage_new)
+          )
+
           render(conn, "show.json", bage: bage_new)
         end
 
       bage ->
         with {:ok, %Bage{} = bage_new} <- GeoLocation.update_bage(bage, bage_params) do
+          OndeServerWeb.Endpoint.broadcast(
+            "room:lobby",
+            "bage_update",
+            bage_to_broadcast(bage_new)
+          )
+
           render(conn, "show.json", bage: bage_new)
         end
     end
