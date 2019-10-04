@@ -1,0 +1,28 @@
+<h1>Show Horario</h1>
+
+<ul>
+
+  <li>
+    <strong>Hora inicio:</strong>
+    <%= @horario.hora_inicio %>
+  </li>
+
+  <li>
+    <strong>Hora fim:</strong>
+    <%= @horario.hora_fim %>
+  </li>
+
+  <li>
+    <strong>N voltas:</strong>
+    <%= @horario.n_voltas %>
+  </li>
+
+  <li>
+    <strong>Zootec:</strong>
+    <%= @horario.zootec %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.horario_path(@conn, :edit, @horario) %></span>
+<span><%= link "Back", to: Routes.horario_path(@conn, :index) %></span>
