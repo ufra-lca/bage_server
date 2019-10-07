@@ -7,14 +7,14 @@ defmodule OndeServer.Horarios.Horario do
     field :hora_inicio, :string
     field :n_voltas, :integer
     field :zootec, :boolean, default: false
-
+    field :itinerario, :string
     timestamps()
   end
 
   @doc false
   def changeset(horario, attrs) do
     horario
-    |> cast(attrs, [:hora_inicio, :hora_fim, :n_voltas, :zootec])
-    |> validate_required([:hora_inicio, :hora_fim, :n_voltas, :zootec])
+    |> cast(attrs, [:hora_inicio, :hora_fim, :n_voltas, :zootec, :itinerario])
+    |> validate_required([:hora_inicio, :hora_fim, :n_voltas, :zootec, :itinerario])
   end
 end

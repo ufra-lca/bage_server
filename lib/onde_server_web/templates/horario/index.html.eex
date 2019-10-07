@@ -6,6 +6,7 @@
       <th>Hora inicio</th>
       <th>Hora fim</th>
       <th>N voltas</th>
+      <th>Itinerario</th>
       <th>Zootec</th>
 
       <th></th>
@@ -17,6 +18,7 @@
       <td><%= horario.hora_inicio %></td>
       <td><%= horario.hora_fim %></td>
       <td><%= horario.n_voltas %></td>
+      <td><%= horario.itinerario %></td>
       <td><%= horario.zootec %></td>
 
       <td>

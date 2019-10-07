@@ -18,6 +18,11 @@
   </li>
 
   <li>
+    <strong>N voltas:</strong>
+    <%= @horario.itinerario %>
+  </li>
+
+  <li>
     <strong>Zootec:</strong>
     <%= @horario.zootec %>
   </li>

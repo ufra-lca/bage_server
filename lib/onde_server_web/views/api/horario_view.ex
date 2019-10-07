@@ -15,6 +15,7 @@ defmodule OndeServerWeb.Api.HorarioView do
       hora_inicio: horario.hora_inicio,
       hora_fim: horario.hora_fim,
       n_voltas: horario.n_voltas,
+      itinerario: horario.itinerario,
       zootec: horario.zootec}
   end
 end

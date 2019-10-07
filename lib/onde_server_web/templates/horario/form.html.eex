@@ -16,6 +16,10 @@
   <%= label f, :n_voltas %>
   <%= number_input f, :n_voltas %>
   <%= error_tag f, :n_voltas %>
+  
+ <%= label f, :itinerario %>
+  <%= text_input f, :itinerario %>
+  <%= error_tag f, :itinerario %>
 
   <%= label f, :zootec %>
   <%= checkbox f, :zootec %>
