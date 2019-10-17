@@ -27,7 +27,10 @@ config :onde_server, OndeServerWeb.Endpoint,
   http: [port: {:system, "PORT"}],
   secret_key_base: secret_key_base,
   server: true,
-  url: [host: System.get_env("APP_NAME") <> ".gigalixirapp.com", port: 80]
+  url: [host: System.get_env("APP_NAME") ||
+  raise """
+ APP NAME
+  """ <> ".gigalixirapp.com", port: 80]
 
 # ## Using releases (Elixir v1.9+)
 #
