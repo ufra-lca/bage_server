@@ -14,7 +14,7 @@ database_url =
 config :onde_server, OndeServer.Repo,
   ssl: true,
   url: database_url,
-  pool_size: 2,
+  pool_size: 2
 
 secret_key_base =
   System.get_env("SECRET_KEY_BASE") ||
@@ -27,8 +27,7 @@ config :onde_server, OndeServerWeb.Endpoint,
   http: [port: {:system, "PORT"}],
   secret_key_base: secret_key_base,
   server: true,
-  url: [host: System.get_env("APP_NAME") <> ".gigalixirapp.com", port: 80],
-
+  url: [host: System.get_env("APP_NAME") <> ".gigalixirapp.com", port: 80]
 
 # ## Using releases (Elixir v1.9+)
 #
